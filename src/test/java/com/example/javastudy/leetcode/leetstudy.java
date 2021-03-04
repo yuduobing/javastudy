@@ -54,6 +54,17 @@ public class leetstudy {
 
     }
 
+    //数组反转
+    @Test
+    public  void  charReverse(){
+        /**/
+//        char[] a={"h","e","l","l","o"};
+        char[] cs2 = { 'I', 'L', 'o', 'v', 'e', 'C', 'o', 'd', 'e' };
+          数组.revisechar(cs2);
+
+
+    }
+
 
 
 }

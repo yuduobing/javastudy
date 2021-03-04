@@ -3,9 +3,7 @@ package com.example.javastudy.leetcode;
 import jdk.nashorn.internal.runtime.FindProperty;
 
 import java.text.SimpleDateFormat;
-import java.util.Calendar;
-import java.util.Date;
-import java.util.HashSet;
+import java.util.*;
 
 /**
  * @author yuduobin[1510557673@qq.com]
@@ -111,8 +109,7 @@ public class 数组 {
 //        }
 //
 //        return  false;
-
-        ///使用set集合
+        ///使用set集合  优势时间短
         HashSet<Object> objects = new HashSet<>();
         for (int num : nums) {
             objects.add(num);
@@ -120,8 +117,22 @@ public class 数组 {
         }
         return   objects.size()!=nums.length;
 
-
     }
 
+/**
+ * 反转字符串
+ */
+    public static  void revisechar(char[] nums){
+        System.out.println(nums);
+        for (int i = 0; i < nums.length/2; i++) {
+            char  temp=nums[i];
+
+            nums[i]=nums[nums.length-1-i];
+
+            nums[nums.length-1-i]=temp;
+        }
+
+        System.out.println(nums);
+    }
 
 }
