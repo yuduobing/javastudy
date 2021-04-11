@@ -1,5 +1,7 @@
 package com.example.javastudy.leetcode;
 
+import cn.hutool.json.JSONException;
+import cn.hutool.json.JSONObject;
 import jdk.nashorn.internal.runtime.FindProperty;
 
 import java.text.SimpleDateFormat;
@@ -134,5 +136,80 @@ public class 数组 {
 
         System.out.println(nums);
     }
+    /*
+    反转正数
+    给你一个 32 位的有符号整数 x ，返回 x 中每位上的数字反转后的结果。
 
+如果反转后整数超过 32 位的有符号整数的范围 [−231,  231 − 1] ，就返回 0。
+
+假设环境不允许存储 64 位整数（有符号或无符号）。
+
+
+     */
+    public  static  int  revised(int x) {
+
+//         我的解法是错误的ge不会一直*100
+//        int huander=x/100;
+//        int bai=( x-huander*100)/10;
+//        int ge=x-huander*100-bai*10;
+//        System.out.println(ge*100+bai*10+huander);
+//辗转除10
+        long   result=0;
+        while (Math.abs(x)>0){
+           int b=x%10;
+           result=result *10 + b;;
+           x=x/10;
+        }
+        if (result>Integer.MAX_VALUE||result<Integer.MIN_VALUE) {
+            return 0;
+        }
+        return (int)result;
+    }
+
+
+    public  void sasa (){
+
+
+        List<JSONObject> objects1 = new ArrayList<>();
+        //字段名 和list中的数据保持一致
+        String[] sname = {"SID", "PID"};
+
+        try {
+            for (int i = 0; i < sname.length; i++) {
+                String s = sname[i];
+                HashSet<String> set = new HashSet<>();
+
+                objects1.forEach(val -> {
+                    String stringname = null;
+
+
+                        stringname = val.getStr(s);
+
+
+                    set.add(stringname);
+                });
+                //取出set数据放入制定好的格式
+                set.forEach(val -> {
+                   final   HashMap<String, Object> objectObjectHashMap = new HashMap<>();
+                    objects1.forEach(valobject -> {
+
+
+                        if (valobject.getStr(s).equalsIgnoreCase(val)) {
+                            //数据相等放入
+                            objectObjectHashMap.put("values",valobject);
+                        }
+
+                    });
+
+                });
+
+            }
+
+
+
+        } catch (Exception  e) {
+            e.printStackTrace();
+        }
+
+    }
 }

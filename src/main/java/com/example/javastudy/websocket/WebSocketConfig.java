@@ -15,7 +15,7 @@ import org.springframework.web.socket.server.standard.ServerEndpointExporter;
  * 表示给spring容器注入bean  他们两个一般一起使用
  * 他们和@component的区别是他们使用了动态代理cglib 所以每次调用都会返回同一个实例
  */
-@Configuration
+//@Configuration
 public class WebSocketConfig {
 
     /**
