@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.hzw.api.mapper.Usermapper2">
+    <select id="selectUser" resultType="User">
+        select *
+        from user
+    </select>
+
+    <select id="queryMessage" resultType="com.alibaba.fastjson.JSONObject">
+        select *
+        from station_config
+        where biaos = "0"
+    </select>
+
+    <update id="alterMessage" parameterType="java.util.Map">
+        update station_config
+        <set>
+            <if test="record.configValue != null">
+                configValue = #{record.configValue},
+            </if>
+
+        </set>
+        where configName = #{record.configName}
+    </update>
+
+</mapper>

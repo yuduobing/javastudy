@@ -5,6 +5,7 @@
     <packaging>pom</packaging>
     <modules>
         <module>spring源码study</module>
+        <module>springcode</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>

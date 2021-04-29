@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.hzw.api.mapper.CompanyBasicInfoMapper2">
+
+
+    <insert id="insertsn" parameterType="java.util.Map">
+        insert into company_tracesn (companyid,tracesn,createtime)
+        <!--        <trim prefix="(" suffix=")" suffixOverrides=",">-->
+        <!--        <if test="record.appId!=null">-->
+        <!--            companyid,-->
+        <!--        </if>-->
+        <!--            <if test="record.tracesn!=null">-->
+        <!--                tracesn,-->
+        <!--            </if>-->
+        <!--         </trim>-->
+
+        values
+        (#{record.appId},#{record.tracesn} ,#{record.createtime})
+
+    </insert>
+
+</mapper>
