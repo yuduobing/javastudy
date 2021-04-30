@@ -33,7 +33,7 @@ public class LoginFilter extends OncePerRequestFilter {
         response.setContentType("application/json;charset=utf-8");
         PrintWriter out = response.getWriter();
         // 设置响应内容，结束请求
-        out.write("请先登录1");
+        out.write("请先登录12");
         out.flush();
         out.close();
     }
